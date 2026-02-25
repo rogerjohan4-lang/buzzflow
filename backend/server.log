@@ -1,0 +1,12 @@
+
+🚀 BuzzFlow API running on http://localhost:3001
+📊 Health check: http://localhost:3001/api/health
+🔥 Trends: http://localhost:3001/api/trends
+📝 Content: http://localhost:3001/api/content
+📅 Posts: http://localhost:3001/api/posts/queue
+
+GET /api/health 200 7ms
+GET /api/health 200 0ms
+GET / 200 1ms
+GET /api/health 200 3ms
+GET /favicon.ico 404 15ms
