@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url';
 import { mkdirSync } from 'fs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DB_DIR = path.join(__dirname);
+const DB_DIR = process.env.RAILWAY_VOLUME_MOUNT_PATH ? path.join(process.env.RAILWAY_VOLUME_MOUNT_PATH) : path.join(__dirname);
 const DB_PATH = path.join(DB_DIR, 'buzzflow.db');
 
 mkdirSync(DB_DIR, { recursive: true });
