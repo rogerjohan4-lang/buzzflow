@@ -1,5 +1,8 @@
+import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
+import { getDB } from './data/db.js';
+import { seedDemoData } from './services/postService.js';
 import trendsRouter from './routes/trends.js';
 import contentRouter from './routes/content.js';
 import postsRouter from './routes/posts.js';
@@ -44,6 +47,10 @@ app.use((err, req, res, next) => {
         error: 'Internal server error'
     });
 });
+
+// Init DB
+getDB();
+seedDemoData();
 
 app.listen(PORT, () => {
     console.log(`\n🚀 BuzzFlow API running on http://localhost:${PORT}`);
